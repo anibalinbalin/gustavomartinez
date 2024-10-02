@@ -43,7 +43,10 @@ const Intro: React.FC = () => {
         <p className="text-sm text-slate-800">
           Desde el año 2023 vivo en la ciudad de Maldonado desempeñandome en
           obras de Jose Ignacio, la Barra, Manantiales y Pueblo San Vicente.
-          Whatsapp: +54 9 11 2485-8558 Email: israelmartinezjara672@gmail.com
+        </p>
+        <p className="text-sm text-slate-800">Whatsapp: +54 9 11 2485-8558</p>
+        <p className="text-sm text-slate-800">
+          Email: israelmartinezjara672@gmail.com
         </p>
       </div>
     </div>

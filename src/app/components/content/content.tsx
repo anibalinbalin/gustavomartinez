@@ -28,7 +28,7 @@ const Content: React.FC<ContentProps> = ({ selected }) => {
 
   return (
     <>
-      {listOfImages.map((data) => (
+      {listOfImages.map((data, index) => (
         <div
           key={`${data.id}-${data.title}`}
           className="block my-12 sm:my-6 relative"
@@ -41,7 +41,11 @@ const Content: React.FC<ContentProps> = ({ selected }) => {
                   fill={true}
                   src={data.url}
                   alt={data.alt}
-                  sizes="100%"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
                 />
                 {data.type.includes("want") && (
                   <div className="absolute top-2 right-2 bg-pink-400 text-white text-xs px-2 py-1 rounded">
@@ -66,6 +70,10 @@ const Content: React.FC<ContentProps> = ({ selected }) => {
                     className="object-contain w-full h-full p-12 max-w-[90vw] rounded-[4px] lg:h-[90vh]"
                     width={500}
                     height={500}
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
                   />
                 </div>
                 <div className="flex flex-col items-start justify-center">
