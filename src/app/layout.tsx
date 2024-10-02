@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Gustavo Martinez",
-  description: "A aaacollection carefully curated by Cassandra Tang",
+  description: "Sitio web de Gustavo Martinez.",
 };
 
 interface RootLayoutProps {
