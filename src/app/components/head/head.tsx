@@ -1,6 +1,13 @@
 import Head from "next/head";
 
-export default function SEO({ title, description, image, url }) {
+interface SEOProps {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+export default function SEO({ title, description, image, url }: SEOProps) {
   const seo = {
     title: title || "What I love now",
     description:
@@ -9,6 +16,7 @@ export default function SEO({ title, description, image, url }) {
     image: image || "/siteimage.jpg",
     url: url || "https://what-i-love-now.vercel.app/",
   };
+
   return (
     <Head>
       <title>{seo.title}</title>
@@ -23,8 +31,7 @@ export default function SEO({ title, description, image, url }) {
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
-
-      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
     </Head>
   );
 }

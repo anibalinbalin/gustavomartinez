@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,7 +11,7 @@ export const metadata = {
   description: "A collection carefully curated by Cassandra Tang",
 };
 
-const ObjectDetails = ({ data }) => {
+const ObjectDetails: React.FC<ObjectDetailsProps> = ({ data }) => {
   const logo = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +67,7 @@ const ObjectDetails = ({ data }) => {
           <Link className="text-sm" href="/">
             <button
               type="button"
-              class="py-2 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-slate-800 focus:z-10 focus:ring-1 focus:ring-gray-200 "
+              className="py-2 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-slate-800 focus:z-10 focus:ring-1 focus:ring-gray-200 "
             >
               ← Back home
             </button>
@@ -79,3 +80,16 @@ const ObjectDetails = ({ data }) => {
 };
 
 export default ObjectDetails;
+
+interface ObjectDetailsProps {
+  data: {
+    title: string;
+    url: string;
+    alt: string;
+    type: string;
+    id: string;
+    description: string;
+    body: string;
+    notes: string;
+  };
+}
