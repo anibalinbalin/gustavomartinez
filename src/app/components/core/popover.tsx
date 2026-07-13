@@ -5,7 +5,7 @@ import { useRef, useState, useEffect, useId } from "react";
 import useClickOutside from "@/app/hooks/useClickOutside";
 
 const TRANSITION = {
-  type: "spring",
+  type: "spring" as const,
   bounce: 0.05,
   duration: 0.3,
 };

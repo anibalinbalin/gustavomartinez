@@ -125,8 +125,8 @@ export function DisclosureTrigger({
                   toggle();
                 }
               },
-              className: cn(className, child.props.className),
-              ...child.props,
+              className: cn(className, (child.props as any).className),
+              ...(child.props as any),
             })
           : child;
       })}

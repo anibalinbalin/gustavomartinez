@@ -115,7 +115,7 @@ function AccordionItem({ value, children, className }: AccordionItemProps) {
       {React.Children.map(children, (child) => {
         if (React.isValidElement<any>(child)) {
           return React.cloneElement(child, {
-            ...child.props,
+            ...(child.props as any),
             value,
             expanded: isExpanded,
           });
